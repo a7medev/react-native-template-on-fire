@@ -17,7 +17,9 @@ const Counter: React.FC = () => {
 
       <View style={styles.counter}>
         <MyButton onPress={handleDecrement}>-</MyButton>
-        <Text style={styles.count}>{count}</Text>
+        <Text style={styles.count} testID="count">
+          {count}
+        </Text>
         <MyButton onPress={handleIncrement}>+</MyButton>
       </View>
     </>
