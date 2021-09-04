@@ -3,8 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { useAppDispatch, useAppSelector } from '../store';
 import { decrement, increment } from '../store/counter';
+import useColors from '../theme/colors';
 
 const Counter: React.FC = () => {
+  const colors = useColors();
   const count = useAppSelector(state => state.counter.count);
   const dispatch = useAppDispatch();
 
@@ -13,11 +15,13 @@ const Counter: React.FC = () => {
 
   return (
     <>
-      <Text style={styles.label}>Current Count</Text>
+      <Text style={[styles.label, { color: colors.accent }]}>
+        Current Count
+      </Text>
 
       <View style={styles.counter}>
         <MyButton onPress={handleDecrement}>-</MyButton>
-        <Text style={styles.count} testID="count">
+        <Text style={[styles.count, { color: colors.black }]} testID="count">
           {count}
         </Text>
         <MyButton onPress={handleIncrement}>+</MyButton>
@@ -31,8 +35,12 @@ export interface MyButtonProps {
 }
 
 const MyButton: React.FC<MyButtonProps> = ({ onPress, children }) => {
+  const colors = useColors();
+
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.button, { backgroundColor: colors.primary }]}>
       <Text style={styles.buttonText}>{children}</Text>
     </TouchableOpacity>
   );
@@ -60,6 +68,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 30,
+    color: 'white',
   },
   label: {
     color: 'white',
