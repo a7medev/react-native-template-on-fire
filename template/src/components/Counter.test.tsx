@@ -1,4 +1,3 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 import { render, fireEvent } from '@testing-library/react-native';
 import { configureStore } from '@reduxjs/toolkit';
