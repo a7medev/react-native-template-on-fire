@@ -12,6 +12,7 @@ This template comes with:
 - Redux Toolkit
 - React Native Testing Library & Jest
 - React Native Reanimated
+- New React JSX Transform
 - And more!
 
 ## Quick Start
