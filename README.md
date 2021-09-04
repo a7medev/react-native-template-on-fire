@@ -1,6 +1,18 @@
+![A Screenshot from the App](./screenshot.jpg)
+
 # React Native Template On Fire 🔥
 
-A React Native Template with all your needs!
+A React Native Template with all your needs out of the box!
+
+## Usage
+
+Make sure your environment is setup as described in the [React Native docs](https://reactnative.dev/docs/environment-setup)
+
+Create the App
+
+```sh
+npx react-native init AwesomeApp --template react-native-template-on-fire
+```
 
 ## Tech Stack
 
@@ -14,13 +26,3 @@ This template comes with:
 - React Native Reanimated
 - New React JSX Transform
 - And more!
-
-## Quick Start
-
-Make sure your environment is setup as described in the [React Native docs](https://reactnative.dev/docs/environment-setup)
-
-Create the App
-
-```sh
-npx react-native init AwesomeApp --template react-native-template-on-fire
-```
