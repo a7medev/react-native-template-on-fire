@@ -6,7 +6,7 @@ import { decrement, increment } from '../store/counter';
 import useColors from '../theme/colors';
 
 const Counter: React.FC = () => {
-  const colors = useColors();
+  const { colors } = useColors();
   const count = useAppSelector(state => state.counter.count);
   const dispatch = useAppDispatch();
 
@@ -15,9 +15,7 @@ const Counter: React.FC = () => {
 
   return (
     <>
-      <Text style={[styles.label, { color: colors.accent }]}>
-        Current Count
-      </Text>
+      <Text style={[styles.label, { color: colors.dark }]}>Current Count</Text>
 
       <View style={styles.counter}>
         <MyButton onPress={handleDecrement}>-</MyButton>
@@ -35,7 +33,7 @@ export interface MyButtonProps {
 }
 
 const MyButton: React.FC<MyButtonProps> = ({ onPress, children }) => {
-  const colors = useColors();
+  const { colors } = useColors();
 
   return (
     <TouchableOpacity

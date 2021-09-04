@@ -1,5 +1,4 @@
 import React from 'react';
-import { useColorScheme } from 'react-native';
 import { NavigationContainer, Theme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -13,19 +12,18 @@ export type AppParamList = {
 const Stack = createNativeStackNavigator<AppParamList>();
 
 const AppNavigator: React.FC = () => {
-  const colors = useColors();
-  const scheme = useColorScheme();
+  const { colors, isDark } = useColors();
 
   const theme: Theme = {
     colors: {
       background: colors.light,
       card: colors.white,
       border: colors.light,
-      notification: colors.accent,
+      notification: colors.primary,
       primary: colors.primary,
       text: colors.black,
     },
-    dark: scheme === 'dark',
+    dark: isDark,
   };
 
   return (
