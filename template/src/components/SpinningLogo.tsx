@@ -1,29 +1,26 @@
-import React, { useEffect, useRef } from 'react';
-import { Animated, Easing, StyleSheet } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import Animated, {
+  Easing,
+  useAnimatedStyle,
+  useSharedValue,
+  withRepeat,
+  withTiming,
+} from 'react-native-reanimated';
 
 const SpinningLogo: React.FC = () => {
-  const spinValue = useRef(new Animated.Value(0)).current;
-
-  const rotate = spinValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
-  });
-
-  useEffect(() => {
-    Animated.loop(
-      Animated.timing(spinValue, {
-        toValue: 1,
-        duration: 5000,
-        easing: Easing.linear,
-        useNativeDriver: true,
-      }),
-    ).start();
-  }, [spinValue]);
-
+  const spin = useSharedValue(0);
+  spin.value = withRepeat(
+    withTiming(360, { duration: 5000, easing: Easing.linear }),
+    -1,
+  );
+  const style = useAnimatedStyle(() => ({
+    transform: [{ rotate: `${spin.value}deg` }],
+  }));
   return (
     <Animated.Image
       source={require('../assets/logo.png')}
-      style={[styles.logo, { transform: [{ rotate }] }]}
+      style={[styles.logo, style]}
     />
   );
 };
