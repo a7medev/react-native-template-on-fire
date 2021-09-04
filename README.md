@@ -1,6 +1,4 @@
-<center>
-![A Screenshot from the App](./screenshot.jpg | width=400)
-</center>
+![A Screenshot from the App](./screenshot.jpg)
 
 # React Native Template On Fire 🔥
 
