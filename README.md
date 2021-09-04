@@ -25,4 +25,5 @@ This template comes with:
 - React Native Testing Library & Jest
 - React Native Reanimated
 - New React JSX Transform
+- Dark/Light mode
 - And more!
