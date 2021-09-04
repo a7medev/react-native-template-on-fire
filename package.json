@@ -2,6 +2,20 @@
   "name": "react-native-template-on-fire",
   "version": "0.0.1",
   "description": "React Native Template",
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "keywords": [
+    "react-native",
+    "typescript",
+    "redux",
+    "react-navigation",
+    "react-native-reanimated",
+    "jest",
+    "template",
+    "boilerplate"
+  ],
   "repository": "git@github.com:a7medev/react-native-template-on-fire.git",
   "author": "Ahmed Mahmoud <a7med.mahmoud2004@gmail.com>",
   "license": "MIT"
