@@ -46,6 +46,7 @@ const imageLoaderConfig = {
 };
 
 module.exports = {
+  stats: 'minimal',
   entry: {
     app: path.join(__dirname, 'index.js'),
   },
